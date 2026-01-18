@@ -13,7 +13,7 @@ import json
 
 import functions
 from functions.FlashKnnWrapper import FlashKNN
-from z_order import xyz2key
+from functions.z_order import xyz2key
 
 
 def parse_args():
@@ -35,7 +35,7 @@ np.random.seed(seed)
 device = "cuda"
 K = args.K
 
-data = np.load("test_data/Area_2_auditorium_2.npy")
+data = np.load("test_data/Area_1_conferenceRoom_2.npy")
 coord:torch.Tensor = torch.from_numpy(data[:,:3]).to(device).float()
 
 voxel_size = 0.02
